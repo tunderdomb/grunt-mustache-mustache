@@ -53,21 +53,20 @@ Every json will be available with its name as a root property.
 
 A structure like this:
 
-  data/
-    people.json
-    colors.json
+    data/
+      people.json
+      colors.json
 
 will translate to:
 
-  {
-    people: the parsed contents of people.json,
-    colors: the parsed contents of colors.json
-  }
+    {
+      people: the parsed contents of people.json,
+      colors: the parsed contents of colors.json
+    }
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
 
 ```js
 grunt.initConfig({
@@ -82,7 +81,11 @@ grunt.initConfig({
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+Specify a partial folder to use partials in your templates.
+Partials can be nested in folders, in that case, you can refer to them in templates like `{{> nested/partial}}`.
+
+From the data root, every json file will be collected and merged into a single object, and will be used as the
+root rendering context. Nested jsons will be ignored.
 
 ```js
 grunt.initConfig({
