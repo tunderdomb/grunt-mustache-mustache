@@ -30,22 +30,20 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     mustache_mustache: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+      options: {
+        partials: "test/partials/",
+        data: "test/data/"
       },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+      partials: {
+        src: "test/fixtures/partials.mustache",
+        dest: "tmp/partials.mustache"
       },
+      globbing: {
+        expand: true,
+        cwd: "test/fixtures/",
+        src: ["*.mustache"],
+        dest: "tmp/"
+      }
     },
 
     // Unit tests.

@@ -39,6 +39,7 @@
     "mustache": "~0.8.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "mustache"
   ]
 }
